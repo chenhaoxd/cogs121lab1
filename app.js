@@ -129,7 +129,8 @@ app.get('/photos', ensureAuthenticated, function(req, res){
     if (err) return handleError(err);
     if (user) {
       // doc may be null if no document matched
-      Instagram.users.liked_by_self({
+      //Instagram.users.liked_by_self({
+        Instagram.users.self_feed({
         access_token: user.access_token,
         complete: function(data) {
           //Map will iterate through the returned data obj
