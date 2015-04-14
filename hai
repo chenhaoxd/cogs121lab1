@@ -1,0 +1,101 @@
+2015-04-14T23:41:14.371834+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=chenisgay.herokuapp.com request_id=5b01c026-3ba7-4aee-b9d3-456dc6317c74 fwd="128.54.33.42" dyno= connect= service= status=503 bytes=
+2015-04-14T23:41:17.097928+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=chenisgay.herokuapp.com request_id=31d5eb15-3daa-4555-afc7-b2909dca3481 fwd="128.54.33.42" dyno= connect= service= status=503 bytes=
+2015-04-14T23:50:22.006885+00:00 heroku[api]: Deploy 6728bf8 by chenhaoxd@gmail.com
+2015-04-14T23:50:22.006885+00:00 heroku[api]: Release v10 created by chenhaoxd@gmail.com
+2015-04-14T23:50:22.625059+00:00 heroku[web.1]: State changed from crashed to starting
+2015-04-14T23:50:24.921768+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-04-14T23:50:26.869562+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-04-14T23:50:26.865186+00:00 app[web.1]: Detected 512 MB available memory, 512 MB limit per process (WEB_MEMORY)
+2015-04-14T23:50:27.443962+00:00 app[web.1]: 
+2015-04-14T23:50:27.443968+00:00 app[web.1]: > mywebapp@0.0.1 start /app
+2015-04-14T23:50:27.443970+00:00 app[web.1]: > node app.js
+2015-04-14T23:50:27.443971+00:00 app[web.1]: 
+2015-04-14T23:50:28.396353+00:00 app[web.1]: { [Error: ENOENT, no such file or directory '.env'] errno: 34, code: 'ENOENT', path: '.env', syscall: 'open' }
+2015-04-14T23:50:28.422865+00:00 app[web.1]: npm ERR! mywebapp@0.0.1 start: `node app.js`
+2015-04-14T23:50:28.423060+00:00 app[web.1]: npm ERR! Exit status 8
+2015-04-14T23:50:28.423194+00:00 app[web.1]: npm ERR! 
+2015-04-14T23:50:28.423597+00:00 app[web.1]: npm ERR! Failed at the mywebapp@0.0.1 start script.
+2015-04-14T23:50:28.402822+00:00 app[web.1]: 
+2015-04-14T23:50:28.404557+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2015-04-14T23:50:28.403155+00:00 app[web.1]:   if (!options.clientID) throw new Error('OAuth2Strategy requires a clientID o
+2015-04-14T23:50:28.404559+00:00 app[web.1]:     at Function.Module._load (module.js:312:12)
+2015-04-14T23:50:28.403246+00:00 app[web.1]:                                ^
+2015-04-14T23:50:28.404562+00:00 app[web.1]:     at startup (node.js:119:16)
+2015-04-14T23:50:28.402893+00:00 app[web.1]: /app/node_modules/passport-instagram/node_modules/passport-oauth/lib/passport-oauth/strategies/oauth2.js:66
+2015-04-14T23:50:28.404560+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2015-04-14T23:50:28.404547+00:00 app[web.1]: Error: OAuth2Strategy requires a clientID option
+2015-04-14T23:50:28.404563+00:00 app[web.1]:     at node.js:935:3
+2015-04-14T23:50:28.404552+00:00 app[web.1]:     at new Strategy (/app/node_modules/passport-instagram/lib/passport-instagram/strategy.js:48:18)
+2015-04-14T23:50:28.423920+00:00 app[web.1]: npm ERR! This is most likely a problem with the mywebapp package,
+2015-04-14T23:50:28.404550+00:00 app[web.1]:     at Strategy.OAuth2Strategy (/app/node_modules/passport-instagram/node_modules/passport-oauth/lib/passport-oauth/strategies/oauth2.js:66:32)
+2015-04-14T23:50:28.417177+00:00 app[web.1]: 
+2015-04-14T23:50:28.404553+00:00 app[web.1]:     at Object.<anonymous> (/app/app.js:60:14)
+2015-04-14T23:50:28.424013+00:00 app[web.1]: npm ERR! not with npm itself.
+2015-04-14T23:50:28.404554+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2015-04-14T23:50:28.424103+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
+2015-04-14T23:50:28.424387+00:00 app[web.1]: npm ERR!     node app.js
+2015-04-14T23:50:28.424585+00:00 app[web.1]: npm ERR!     npm owner ls mywebapp
+2015-04-14T23:50:28.424821+00:00 app[web.1]: npm ERR! System Linux 3.13.0-40-generic
+2015-04-14T23:50:28.404556+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2015-04-14T23:50:28.424486+00:00 app[web.1]: npm ERR! You can get their info via:
+2015-04-14T23:50:28.427578+00:00 app[web.1]: npm ERR! 
+2015-04-14T23:50:28.424684+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
+2015-04-14T23:50:28.424952+00:00 app[web.1]: npm ERR! command "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2015-04-14T23:50:28.425565+00:00 app[web.1]: npm ERR! node -v v0.10.38
+2015-04-14T23:50:28.425077+00:00 app[web.1]: npm ERR! cwd /app
+2015-04-14T23:50:28.425695+00:00 app[web.1]: npm ERR! npm -v 1.4.28
+2015-04-14T23:50:28.425819+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2015-04-14T23:50:28.427682+00:00 app[web.1]: npm ERR! Additional logging details can be found in:
+2015-04-14T23:50:28.427781+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2015-04-14T23:50:28.427960+00:00 app[web.1]: npm ERR! not ok code 0
+2015-04-14T23:50:29.188403+00:00 heroku[web.1]: Process exited with status 1
+2015-04-14T23:50:31.837445+00:00 heroku[web.1]: Starting process with command `npm start`
+2015-04-14T23:50:33.563877+00:00 app[web.1]: Detected 512 MB available memory, 512 MB limit per process (WEB_MEMORY)
+2015-04-14T23:50:33.563903+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-04-14T23:50:34.183040+00:00 app[web.1]: 
+2015-04-14T23:50:34.183045+00:00 app[web.1]: > mywebapp@0.0.1 start /app
+2015-04-14T23:50:34.183047+00:00 app[web.1]: > node app.js
+2015-04-14T23:50:34.183049+00:00 app[web.1]: 
+2015-04-14T23:50:35.030631+00:00 app[web.1]: 
+2015-04-14T23:50:35.030778+00:00 app[web.1]: /app/node_modules/passport-instagram/node_modules/passport-oauth/lib/passport-oauth/strategies/oauth2.js:66
+2015-04-14T23:50:35.022931+00:00 app[web.1]: { [Error: ENOENT, no such file or directory '.env'] errno: 34, code: 'ENOENT', path: '.env', syscall: 'open' }
+2015-04-14T23:50:35.033238+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2015-04-14T23:50:35.068423+00:00 app[web.1]: npm ERR! You can get their info via:
+2015-04-14T23:50:35.066751+00:00 app[web.1]: npm ERR! mywebapp@0.0.1 start: `node app.js`
+2015-04-14T23:50:35.068554+00:00 app[web.1]: npm ERR!     npm owner ls mywebapp
+2015-04-14T23:50:35.072251+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2015-04-14T23:50:35.031134+00:00 app[web.1]:   if (!options.clientID) throw new Error('OAuth2Strategy requires a clientID o
+2015-04-14T23:50:35.066947+00:00 app[web.1]: npm ERR! Exit status 8
+2015-04-14T23:50:35.068665+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
+2015-04-14T23:50:35.072662+00:00 app[web.1]: npm ERR! not ok code 0
+2015-04-14T23:50:35.067103+00:00 app[web.1]: npm ERR! 
+2015-04-14T23:50:35.068814+00:00 app[web.1]: npm ERR! System Linux 3.13.0-40-generic
+2015-04-14T23:50:35.067220+00:00 app[web.1]: npm ERR! Failed at the mywebapp@0.0.1 start script.
+2015-04-14T23:50:35.069088+00:00 app[web.1]: npm ERR! cwd /app
+2015-04-14T23:50:35.067982+00:00 app[web.1]: npm ERR! This is most likely a problem with the mywebapp package,
+2015-04-14T23:50:35.068954+00:00 app[web.1]: npm ERR! command "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2015-04-14T23:50:35.069220+00:00 app[web.1]: npm ERR! node -v v0.10.38
+2015-04-14T23:50:35.033226+00:00 app[web.1]: Error: OAuth2Strategy requires a clientID option
+2015-04-14T23:50:35.033243+00:00 app[web.1]:     at startup (node.js:119:16)
+2015-04-14T23:50:35.068086+00:00 app[web.1]: npm ERR! not with npm itself.
+2015-04-14T23:50:35.069365+00:00 app[web.1]: npm ERR! npm -v 1.4.28
+2015-04-14T23:50:35.068193+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
+2015-04-14T23:50:35.069513+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2015-04-14T23:50:35.033236+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2015-04-14T23:50:35.033244+00:00 app[web.1]:     at node.js:935:3
+2015-04-14T23:50:35.068312+00:00 app[web.1]: npm ERR!     node app.js
+2015-04-14T23:50:35.071790+00:00 app[web.1]: npm ERR! 
+2015-04-14T23:50:35.052182+00:00 app[web.1]: 
+2015-04-14T23:50:35.033239+00:00 app[web.1]:     at Function.Module._load (module.js:312:12)
+2015-04-14T23:50:35.072028+00:00 app[web.1]: npm ERR! Additional logging details can be found in:
+2015-04-14T23:50:35.033241+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2015-04-14T23:50:35.033229+00:00 app[web.1]:     at Strategy.OAuth2Strategy (/app/node_modules/passport-instagram/node_modules/passport-oauth/lib/passport-oauth/strategies/oauth2.js:66:32)
+2015-04-14T23:50:35.033231+00:00 app[web.1]:     at new Strategy (/app/node_modules/passport-instagram/lib/passport-instagram/strategy.js:48:18)
+2015-04-14T23:50:35.031637+00:00 app[web.1]:                                ^
+2015-04-14T23:50:35.033233+00:00 app[web.1]:     at Object.<anonymous> (/app/app.js:60:14)
+2015-04-14T23:50:35.033234+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2015-04-14T23:50:35.968236+00:00 heroku[web.1]: Process exited with status 1
+2015-04-14T23:50:37.357362+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=chenisgay.herokuapp.com request_id=e2eeb899-f8e1-44a2-a42c-eb706dd85499 fwd="128.54.33.42" dyno= connect= service= status=503 bytes=
+2015-04-14T23:50:29.210760+00:00 heroku[web.1]: State changed from starting to crashed
+2015-04-14T23:50:29.212301+00:00 heroku[web.1]: State changed from crashed to starting
+2015-04-14T23:50:35.986409+00:00 heroku[web.1]: State changed from starting to crashed

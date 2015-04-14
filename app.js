@@ -19,15 +19,15 @@ var models = require('./models');
 
 //client id and client secret here, taken from .env
 dotenv.load();
-var INSTAGRAM_CLIENT_ID = process.env.INSTAGRAM_CLIENT_ID;
-var INSTAGRAM_CLIENT_SECRET = process.env.INSTAGRAM_CLIENT_SECRET;
-var INSTAGRAM_CALLBACK_URL = process.env.INSTAGRAM_CALLBACK_URL;
-var INSTAGRAM_ACCESS_TOKEN = "";
-var FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID;
-var FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET;
-var FACEBOOK_CALLBACK_URL = process.env.FACEBOOK_CALLBACK_URL;
-Instagram.set('client_id', INSTAGRAM_CLIENT_ID);
-Instagram.set('client_secret', INSTAGRAM_CLIENT_SECRET);
+var instagram_client_id = process.env.instagram_client_id ;
+var instagram_client_secret = process.env.instagram_client_secret;
+var instagram_callback_url = process.env.instagram_callback_url;
+var instagram_access_token = "";
+var facebook_client_id = process.env.facebook_client_id;
+var facebook_client_secret = process.env.facebook_client_secret;
+var facebook_callback_url = process.env.facebook_callback_url;
+Instagram.set('client_id', instagram_client_id);
+Instagram.set('client_secret', instagram_client_secret);
 
 //connect to database
 mongoose.connect(process.env.MONGOLAB_URI);
@@ -58,9 +58,9 @@ passport.deserializeUser(function(obj, done) {
 //   credentials (in this case, an accessToken, refreshToken, and Instagram
 //   profile), and invoke a callback with a user object.
 passport.use(new InstagramStrategy({
-    clientID: INSTAGRAM_CLIENT_ID,
-    clientSecret: INSTAGRAM_CLIENT_SECRET,
-    callbackURL: INSTAGRAM_CALLBACK_URL
+    clientID: instagram_client_id,
+    clientSecret: instagram_client_secret,
+    callbackURL: instagram_callback_url
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
@@ -86,9 +86,9 @@ passport.use(new InstagramStrategy({
 ));
 
 passport.use(new FacebookStrategy({
-    clientID: FACEBOOK_CLIENT_ID,
-    clientSecret: FACEBOOK_CLIENT_SECRET,
-    callbackURL: FACEBOOK_CALLBACK_URL
+    clientID: facebook_client_id,
+    clientSecret: facebook_client_secret,
+    callbackURL: facebook_callback_url
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
