@@ -151,7 +151,15 @@ app.get('/login', function(req, res){
 });
 
 app.get('/account', ensureAuthenticated, function(req, res){
-  res.render('account', {user: req.user});
+  if(req.user.provider == 'instagram'){
+    res.render('account', {user: req.user, instagram : true});
+  }
+  else if(req.user.provider == 'facebook'){
+      res.render('account', {user: req.user, facebook : true});
+  }
+  else{
+      res.render('account', {user: req.user});
+  }
 });
 
 app.get('/photos', ensureAuthenticated, function(req, res){
