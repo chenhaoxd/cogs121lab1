@@ -182,7 +182,12 @@ app.get('/photos', ensureAuthenticated, function(req, res){
             //insert json object into image array
             return tempJSON;
           });
-          res.render('photos', {photos: imageArr});
+          var imageCapArr = data.map(function(item){
+            tempJSON1 = {};
+            tempJSON1.cap = item.caption;
+            return tempJSON1
+          });
+          res.render('photos', {photos: imageArr, captions: imageCapArr});
         }
       }); 
     }
