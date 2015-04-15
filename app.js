@@ -26,6 +26,7 @@ var instagram_access_token = "";
 var facebook_client_id = process.env.facebook_client_id;
 var facebook_client_secret = process.env.facebook_client_secret;
 var facebook_callback_url = process.env.facebook_callback_url;
+var facebook_access_token = "";
 Instagram.set('client_id', instagram_client_id);
 Instagram.set('client_secret', instagram_client_secret);
 
