@@ -152,10 +152,10 @@ app.get('/login', function(req, res){
 });
 
 app.get('/account', ensureAuthenticated, function(req, res){
-  if(req.user.provider == 'instagram'){
+  if(req.user.provider === 'instagram'){
     res.render('account', {user: req.user, instagram : true});
   }
-  else if(req.user.provider == 'facebook'){
+  else if(req.user.provider === 'facebook'){
       res.render('account', {user: req.user, facebook : true});
   }
   else{
