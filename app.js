@@ -171,7 +171,8 @@ app.get('/photos', ensureAuthenticated, function(req, res){
       // doc may be null if no document matched
       //Instagram.users.liked_by_self({
       Instagram.users.recent({
-        access_token: user.access_token,
+        //access_token: user.access_token,
+        user_id : user.id
         complete: function(data) {
           //Map will iterate through the returned data obj
           var imageArr = data.map(function(item) {
