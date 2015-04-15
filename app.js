@@ -202,7 +202,7 @@ app.get('/auth/instagram',
   });
 
 app.get('/auth/facebook',
-  passport.authenticate('instagram'),
+  passport.authenticate('facebook'),
   function(req, res){
     // The request will be redirected to Instagram for authentication, so this
     // function will not be called.
@@ -220,7 +220,7 @@ app.get('/auth/instagram/callback',
   });
 
 app.get('/auth/facebook/callback', 
-  passport.authenticate('instagram', { failureRedirect: '/login'}),
+  passport.authenticate('facebook', { failureRedirect: '/login'}),
   function(req, res) {
     res.redirect('/account');
   });
