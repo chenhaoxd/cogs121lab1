@@ -172,7 +172,7 @@ app.get('/photos', ensureAuthenticated, function(req, res){
       //Instagram.users.liked_by_self({
       Instagram.users.recent({
         //access_token: user.access_token,
-        user_id : user.id
+        user_id : user.id,
         complete: function(data) {
           //Map will iterate through the returned data obj
           var imageArr = data.map(function(item) {
