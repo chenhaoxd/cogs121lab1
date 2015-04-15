@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var Instagram = require('instagram-node-lib');
 var mongoose = require('mongoose');
-var graph = require('fbgraph');
+//var graph = require('fbgraph');
 var app = express();
 
 //local dependencies
