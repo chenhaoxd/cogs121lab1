@@ -2,3 +2,9 @@ hello account
 <p>ID: {{user.id}}</p>
 <p>Username: {{user.username}}</p>
 <p>Name:{{user.displayName}}</p>
+{{#if facebook}}
+<p>display facebook information <a href ="/facebookstuff"><a/></p>
+{{/if}}
+{{#if instagram}}
+<p>display instagram stuff <a href ="/photos"><a/></p>
+{{/if}}
