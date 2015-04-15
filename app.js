@@ -191,16 +191,6 @@ app.get('/photos', ensureAuthenticated, function(req, res){
   });
 });
 
-app.get('/facebook', ensureAuthenticated, function(req, res){
-  function ShowMyName() {
-        FB.api("/me",
-                function (response) {
-                    alert('Name is ' + response.name);
-                });
-    }
-});
-
-
 // GET /auth/instagram
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  The first step in Instagram authentication will involve
