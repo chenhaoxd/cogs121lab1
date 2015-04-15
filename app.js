@@ -179,15 +179,11 @@ app.get('/photos', ensureAuthenticated, function(req, res){
             //create temporary json object
             tempJSON = {};
             tempJSON.url = item.images.low_resolution.url;
+            tempJSON.cap = item.caption;
             //insert json object into image array
             return tempJSON;
           });
-          var imageCapArr = data.map(function(item){
-            tempJSON1 = {};
-            tempJSON1.cap = item.caption;
-            return tempJSON1
-          });
-          res.render('photos', {photos: imageArr, captions: imageCapArr});
+          res.render('photos', {photos: imageArr});
         }
       }); 
     }
