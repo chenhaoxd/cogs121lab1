@@ -12,6 +12,7 @@ var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var Instagram = require('instagram-node-lib');
 var mongoose = require('mongoose');
+var graph = require('fbgraph');
 var app = express();
 
 //local dependencies
@@ -188,6 +189,15 @@ app.get('/photos', ensureAuthenticated, function(req, res){
       }); 
     }
   });
+});
+
+app.get('/facebook', ensureAuthenticated, function(req, res){
+  function ShowMyName() {
+        FB.api("/me",
+                function (response) {
+                    alert('Name is ' + response.name);
+                });
+    }
 });
 
 
