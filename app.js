@@ -242,7 +242,7 @@ app.get('/auth/instagram',
   });
 
 app.get('/auth/facebook',
-  passport.authenticate('facebook'),
+  passport.authenticate('facebook', {scope : ['user_likes', 'read_custom_friendlists', 'user_photos']}),
   function(req, res){
     // The request will be redirected to Instagram for authentication, so this
     // function will not be called.
