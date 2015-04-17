@@ -214,10 +214,9 @@ app.get('/facebook', ensureAuthenticatedFacebook, function(req, res){
       graph.setAccessToken(user.access_token);
       var params = {limit : 10};
 
-      graph.get("/me/picture", params, function(err, res){
-        complete: function(data) {
+      graph.get("/me/photos", params, function(err, photos){
           //Map will iterate through the returned data obj
-          var imageArr = data.map(function(item) {
+          var imageArr = photos.data.map(function(item) {
             //create temporary json object
             tempJSON = {};
             tempJSON.url = item.picture;
@@ -225,7 +224,6 @@ app.get('/facebook', ensureAuthenticatedFacebook, function(req, res){
             return tempJSON;
           });
           res.render('facebook', {photos: imageArr});
-        }
       });
     }
   });
