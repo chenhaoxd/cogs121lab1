@@ -99,7 +99,6 @@ passport.use(new FacebookStrategy({
       "id": profile.id,
       "access_token": accessToken 
     }, function(err, user, created) {
-      
       // created will be true here
       models.User.findOrCreate({}, function(err, user, created) {
         // created will be false here
@@ -136,6 +135,21 @@ app.set('port', process.env.PORT || 3000);
 //   the request is authenticated (typically via a persistent login session),
 //   the request will proceed.  Otherwise, the user will be redirected to the
 //   login page.
+
+function ensureAuthenticatedInstagram(req, res, next) {
+  if (req.isAuthenticated() && req.user.provider === 'instagram') { 
+    return next(); 
+  }
+  res.redirect('/login');
+}
+
+function ensureAuthenticatedFacebook(req, res, next) {
+  if (req.isAuthenticated() && req.user.provider === 'facebook') { 
+    return next(); 
+  }
+  res.redirect('/login');
+}
+
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { 
     return next(); 
@@ -164,7 +178,7 @@ app.get('/account', ensureAuthenticated, function(req, res){
   }
 });
 
-app.get('/photos', ensureAuthenticated, function(req, res){
+app.get('/photos', ensureAuthenticatedInstagram, function(req, res){
   var query  = models.User.where({ name: req.user.username });
   query.findOne(function (err, user) {
     if (err) return handleError(err);
@@ -191,14 +205,16 @@ app.get('/photos', ensureAuthenticated, function(req, res){
   });
 });
 
-app.get('/facebook', ensureAuthenticated, function(req, res){
+app.get('/facebook', ensureAuthenticatedFacebook, function(req, res){
   var query  = models.User.where({ name: req.user.displayName });
   query.findOne(function (err, user) {
     if (err) return handleError(err);
     if (user) {
       // doc may be null if no document matched
-      graph.setAccessToken(access_token);
-      graph.get("/me/picture", function(err, res){
+      graph.setAccessToken(user.access_token);
+      var params = {limit : 10};
+
+      graph.get("/me/picture", params, function(err, res){
         complete: function(data) {
           //Map will iterate through the returned data obj
           var imageArr = data.map(function(item) {
