@@ -217,7 +217,7 @@ app.get('/facebook', ensureAuthenticatedFacebook, function(req, res){
       graph.get("/me/photos", params, function(err, photos){
           //Map will iterate through the returned data obj
           var imageArr = photos.data.map(function(item) {
-            /n/create temporary json object
+            create temporary json object
             tempJSON = {};
             tempJSON.url = item.picture;
             //insert json object into image array
