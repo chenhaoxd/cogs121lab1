@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 var dotenv = require('dotenv');
 var Instagram = require('instagram-node-lib');
 var mongoose = require('mongoose');
-//var graph = require('fbgraph');
+var graph = require('fbgraph');
 var app = express();
 
 //local dependencies
@@ -187,6 +187,30 @@ app.get('/photos', ensureAuthenticated, function(req, res){
           res.render('photos', {photos: imageArr});
         }
       }); 
+    }
+  });
+});
+
+app.get('/facebook', ensureAuthenticated, function(req, res){
+  var query  = models.User.where({ name: req.user.displayName });
+  query.findOne(function (err, user) {
+    if (err) return handleError(err);
+    if (user) {
+      // doc may be null if no document matched
+      graph.setAccessToken(access_token);
+      graph.get("/me/picture", function(err, res){
+        complete: function(data) {
+          //Map will iterate through the returned data obj
+          var imageArr = data.map(function(item) {
+            //create temporary json object
+            tempJSON = {};
+            tempJSON.url = item.picture;
+            //insert json object into image array
+            return tempJSON;
+          });
+          res.render('facebook', {photos: imageArr});
+        }
+      });
     }
   });
 });
